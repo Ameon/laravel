@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./project:/var/www/html
-# php    
+# postgres
   postgres:
     container_name: postgres
     hostname: postgres

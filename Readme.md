@@ -10,6 +10,7 @@ docker compose up -d
 
 ```bash
 docker exec -ti php-fpm_8.2 bash -c "composer create-project --prefer-dist laravel/laravel ."
+```
 
 3. Настройка владельце для папки storage
 
