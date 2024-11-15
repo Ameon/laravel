@@ -2,10 +2,10 @@ FROM php:8.2.0-fpm-bullseye
 
 # Обновление списка пакетов и установка зависимостей
 RUN apt-get update && apt-get install -y \
-    libpq-dev
-  #  git \
-  # unzip \
-  #  zip \
+    libpq-dev \
+    git \
+    unzip \
+    zip
   #  libcurl4-openssl-dev \
   #  libxml2-dev \
   #  libonig-dev \

@@ -1,12 +1,11 @@
-version: "3.9"
 services:
-# nginx
+  # nginx
   nginx:
     container_name: nginx
     hostname: nginx
     image: nginx
     ports:
-      - "80:80"
+      - "81:80"
       - "443:443"
     networks:
       - app
@@ -15,11 +14,10 @@ services:
       - ./project:/var/www/html
     depends_on:
       - php-fpm_8.2
-# php
+  # php
   php-fpm_8.2:
     container_name: php-fpm_8.2
     hostname: php-fpm_8.2
-    image: php:8.2.0-fpm-bullseye
     build:
       context: .
       dockerfile: docker/php-fpm_8.2/Dockerfile
@@ -28,7 +26,12 @@ services:
     restart: unless-stopped
     volumes:
       - ./project:/var/www/html
-# postgres
+      # - type: bind
+      #   source: ./
+      #   target: /var/www/html
+      #   bind:
+      #     propagation: rprivate
+  # postgres
   postgres:
     container_name: postgres
     hostname: postgres
